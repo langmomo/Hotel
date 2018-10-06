@@ -1,0 +1,82 @@
+﻿@*
+	For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model MVC.Models.HotelManage
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Order Confirmation</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">
+	<link href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"
+			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			crossorigin="anonymous"></script>
+	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+	<style>
+
+
+		ul {
+			list-style-type: square;
+		}
+
+		.panel {
+			margin: 120px auto 60px;
+			text-align: center;
+			background-color: aliceblue;
+			opacity: 0.5;
+			width: 500px;
+			border-radius: 10px; /* 来个圆角 */
+			padding: 1px;
+			transition: box-shadow .30s;
+		}
+
+			.panel:hover {
+				box-shadow: #fff 5px 5px 25px;
+			}
+
+		h2 {
+			font-weight: bold;
+			margin: 15px 0 20px;
+		}
+
+		.left {
+			width: 200px;
+			margin-bottom: 30px;
+			font-weight: bold;
+			float: left;
+			opacity: 1;
+		}
+
+		.right {
+			overflow: hidden;
+			list-style: none;
+			margin-left: 100px;
+			margin-bottom: 30px;
+			font-weight: bold;
+			align-content: left;
+		}
+	</style>
+</head>
+<body>
+	<div class="panel" style="color:aliceblue; background-color:rgba(0,0,0,.8)">
+		<h2>Order Confirmation:</h2>
+		<div class="left">
+			<ul>
+				<li>Customer Name: </li>
+				<li>Phone Number: </li>
+				<li>Email: </li>
+				<li>Check-In Date: </li>
+				<li>Check-Out Date: </li>	
+			</ul>
+		</div>
+		<div class="right">
+			<li>@Model.Order.CustomerName</li>
+			<li>@Model.Order.Phone</li>
+			<li>@Model.Order.Email</li>
+			<li>@Model.Order.CheckinDate</li>
+			<li>@Model.Order.CheckoutDate</li>
+		</div>
+	</div>
+</body>
+</html>

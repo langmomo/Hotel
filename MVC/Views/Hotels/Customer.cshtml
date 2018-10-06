@@ -1,0 +1,47 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+@model MVC.Models.HotelManage
+<head>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">
+	<link href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"
+			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			crossorigin="anonymous">
+	</script>
+	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+</head>
+<body>
+	</br>
+	<div class="container">
+		@foreach (var order in ViewBag.reservations)
+		{
+			<div class="jumbotron rounded" style="color:rgb(201, 194, 194); background-color:rgba(0,0,0,0.7)">
+				<div class="container">
+					<h2 class="display-6 font-weight-bol" id="Name" name="Name">Reservation: @order.ReservationNum</h2>
+					<div class="form-row">
+						<div class="form-group col-md-4">
+							<label>Customer:  @order.CustomerName</label>
+						</div>
+						<div class="form-group col-md-4">
+							<label>Email:  @order.Email</label>
+						</div>
+						<div class="form-group col-md-4">
+							<label>Phone:  @order.Phone</label>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-group col-md-4">
+							<label>Room Number:  @order.RoomNum</label>
+						</div>
+						<div class="form-group col-md-4">
+							<label>Checkin Date:  @order.CheckinDate</label>
+						</div>
+						<div class="form-group col-md-4">
+							<label>Checkout Date:  @order.CheckoutDate</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		}
+	</div>
+</body>
+</html>

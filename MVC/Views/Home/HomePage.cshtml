@@ -1,0 +1,102 @@
+﻿@{
+	Layout = null;
+}
+@model MVC.Models.HotelManage
+<html lang="en">
+<head>
+	<title>Welcome to HHOtel</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">
+	<link href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"
+			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			crossorigin="anonymous">
+	</script>
+	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+	<style>
+		/* Make the image fully responsive */
+		.carousel-inner img {
+			width: 100%;
+			height: 100%;
+		}
+
+		.container {
+			margin-bottom: 200px;
+			padding: 15px;
+		}
+
+		#btn {
+			margin-top: 23.5px;
+			padding: 6.5px;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="demo" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ul class="carousel-indicators">
+			<li data-target="#demo" data-slide-to="0" class="active"></li>
+			<li data-target="#demo" data-slide-to="1"></li>
+			<li data-target="#demo" data-slide-to="2"></li>
+		</ul>
+		<!-- The slideshow -->
+		<div class="carousel-inner">
+			<div class="carousel-caption d-none d-md-block">
+				<p class="font-weight-bold">
+					<h2 style="color:rgb(41, 37, 37); font:italic bold 50px arial,sans-serif;"> H&HOTEL</h2>
+				</p>
+				<form method="post" asp-controller="Hotels" asp-action="HHOTEL">
+					<div class="container" style="background-color: rgba(0,0,0,0.7) ">
+						<div class="row ">
+							<div class="col-md-3">
+								<label for="inputPassword4">CheckInDate</label>
+								<input asp-for="Order.CheckinDate" class="form-control datepicker" data-provide="datepicker" value="Date">
+							</div>
+							<div class="col-md-3">
+								<label for="inputPassword4">CheckOutDate</label>
+								<input type="text" asp-for="Order.CheckoutDate" class="form-control datepicker" data-provide="datepicker"  placeholder="Date">
+							</div>
+							<div class="col-md-3">
+								<label for="inputPassword4">People</label>
+								<input type="text" asp-for="Hotel.Capacity" class="form-control" id="inputPassword4" placeholder="1">
+							</div>
+							<div class="col-md-2">
+								<label></label>
+								<input class="btn btn-primary form-control" id="btn" type="submit" value="Search">
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="carousel-item active">
+				<img src="https://s-ec.bstatic.com/images/hotel/max1280x900/135/135163516.jpg" alt="Los Angeles" width="1100" height="500">
+			</div>
+			<div class="carousel-item">
+				<img src="https://s-ec.bstatic.com/images/hotel/max1280x900/135/135302753.jpg" alt="Chicago" width="1100" height="500">
+			</div>
+			<div class="carousel-item">
+				<img src="https://t-ec.bstatic.com/images/hotel/max1280x900/135/135163532.jpg" alt="New York" width="1100" height="500">
+			</div>
+		</div>
+	</div>
+	
+	<!-- Left and right controls -->
+	<a class="carousel-control-prev" href="#demo" data-slide="prev">
+		<span class="carousel-control-prev-icon"></span>
+	</a>
+	<a class="carousel-control-next" href="#demo" data-slide="next">
+		<span class="carousel-control-next-icon"></span>
+	</a>
+</body>
+</html>
+<script type="text/javascript">
+	$('.datepicker').datepicker({
+		format: 'mm/dd/yyyy',
+		startDate: '-3d'
+	});
+	setInterval(function () {
+		$("h2").fadeOut(3000);
+		$("h2").fadeIn(300);
+	}, 700);
+
+</script>

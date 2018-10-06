@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "About";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<p>Use this area to provide additional information.</p>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+	<script type='text/javascript'>
+		$(function(){
+		  $('.date-picker').datepicker();
+		})
+	</script>
+</head>
+<body>
+	<input class="date-picker" />
+</body>
+</html>
+<script language="javascript" type="text/javascript">
+	$(document).ready(function () {
+		$(".date-picler").click(function (e) {
+			$('.date-picker').datepicker();
+		})
+	});
